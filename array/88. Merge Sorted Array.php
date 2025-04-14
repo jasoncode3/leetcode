@@ -10,15 +10,12 @@ class Solution {
      * @return NULL
      */
     function merge(&$nums1, $m, $nums2, $n) {
-        $count = 0;
-        $nums1 = array_merge($nums1, $nums2);
-        sort($nums1);
-        foreach($nums1 as $number) {
-            if ($number === 0) {
-                $count += 1;
-            }
+        $merged = array_merge(array_slice($nums1, 0, $m), $nums2);
+        sort($merged);
+    
+        for ($i = 0; $i < $m + $n; $i++) {
+            $nums1[$i] = $merged[$i];
         }
-        $nums1 = array_slice($nums1, $count);
     }
 }
 
