@@ -9,7 +9,6 @@ class Solution {
     
     function removeDuplicates(&$nums) {
         $nums = array_unique($nums);
-        $k = count($nums);
-        return $k;
+        return count($nums);
     }
 }
