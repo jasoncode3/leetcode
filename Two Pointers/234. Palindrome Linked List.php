@@ -45,8 +45,18 @@ function palindromeCheck($head) {
     }
 }
 
+function palindromeCheckArr($head) {
+    $arr = [];
+    while($head){
+        $arr[] = $head->val;
+        $head = $head->next;
+    }
+    return $arr === array_reverse($arr);
+}
+
 
 $head = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
-isPalindrome($head);
+// isPalindrome($head);
 // palindromeCheck($head);
+palindromeCheckArr($head);
 
